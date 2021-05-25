@@ -26,6 +26,12 @@ class HistoryTransaksiController extends Controller
         if ($param == "outcome") {
             $data = DB::table("saldo_history")->where('type', 'like', '%OUTCOME%')->get();
         }
+        if ($param == "hutang") {
+            $data = DB::table("saldo_history")->where('type', 'like', '%HUTANG%')->get();
+        }
+        if ($param == "piutang") {
+            $data = DB::table("saldo_history")->where('type', 'like', '%PIUTANG%')->get();
+        }
 
         if ($data) {
             return \Response::json([
@@ -33,6 +39,7 @@ class HistoryTransaksiController extends Controller
                 "status" => "success",
                 "message" => "Berhasil Mendapatkan Data Transaksi",
                 "type" => "$param",
+                "saldo" => Saldo::all(),
                 "data" => $data,
             ], 200);
         } else {

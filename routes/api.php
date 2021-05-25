@@ -22,6 +22,17 @@ Route::post('/income/store', 'KasMasukController@store');
 Route::delete('/income/{id}/delete', 'KasMasukController@delete');
 Route::get('/income/{id}/detail', 'KasMasukController@detail');
 
+Route::any('/hutang/all', 'HutangController@getAll');
+Route::post('/hutang/store', 'HutangController@store');
+Route::delete('/hutang/{id}/delete', 'HutangController@delete');
+Route::get('/hutang/{id}/detail', 'HutangController@detail');
+
+
+Route::any('/piutang/all', 'PiutangController@getAll');
+Route::post('/piutang/store', 'PiutangController@store');
+Route::delete('/piutang/{id}/delete', 'PiutangController@delete');
+Route::get('/piutang/{id}/detail', 'PiutangController@detail');
+
 Route::any('/outcome/all', 'KasKeluarController@getAll');
 Route::post('/outcome/store', 'KasKeluarController@store');
 Route::delete('/outcome/{id}/delete', 'KasKeluarController@delete');
