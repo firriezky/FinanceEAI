@@ -16,7 +16,7 @@ class HutangController extends Controller
             "nama_stakeholder" => "required",
             "kontak_stakeholder" => "required",
             "tenggat_waktu" => "required|date_format:Y-m-d",
-            "tanggal_kembali" => "required|date_format:Y-m-d|after:tenggat_waktu",
+            "tanggal_kembali" => "date_format:Y-m-d|after:tenggat_waktu",
             "keterangan" => "required",
             "jumlah" => "required|numeric",
         ];
