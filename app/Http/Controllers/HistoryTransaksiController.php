@@ -30,7 +30,7 @@ class HistoryTransaksiController extends Controller
             $data = DB::table("saldo_history")->where('type', 'like', '%HUTANG%')->get();
         }
         if ($param == "piutang") {
-            $data = DB::table("saldo_history")->where('type', 'like', '%PIUTANG%')->get();
+            $data = DB::table("saldo_history")->where('type', 'like', '%c%')->get();
         }
 
         if ($data) {
